@@ -1,0 +1,11 @@
+
+export PATH=~/bin\
+:$JAVA_HOME/bin\
+:$JAVA_HOME/jre/bin\
+:$GRADLE_HOME/bin\
+:$M2_HOME/bin\
+:$ANT_HOME/bin\
+:$ECLIPSE_HOME/mars\
+:$PYTHON_BIN\
+:$NODE_HOME/bin\
+:/usr/local/bin:/usr/bin:/bin:/usr/sbin\

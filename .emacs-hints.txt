@@ -1,0 +1,5 @@
+1. C-x C-q : Make Dired buffer editable
+   <<<modify file names>>>
+   C-c C-c : Make Dired buffer read-only; saves file name changes
+
+2.

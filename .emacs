@@ -137,10 +137,33 @@
 (add-hook 'before-save-hook 'java-mode-untabify)
 
 ;-------------------------------------------------------
-;  Show date and time in mode line
+;  Use fancy mode line
 ;-------------------------------------------------------
-;;; (setq display-time-day-and-date t)
-;;; (display-time)
+;;; one-time only:  (all-the-icons-install-fonts)
+(require 'doom-modeline)
+(require 'all-the-icons)
+(require 'octicons)
+;;; (require 'fontawesome)
+(doom-modeline-init)
+(doom-modeline-mode 1)
+(setq doom-modeline-icon                     t)
+(setq doom-modeline-major-mode-icon          t)
+(setq doom-modeline-major-mode-color-icon    t)
+(setq doom-modeline-buffer-state-icon        t)
+(setq doom-modeline-buffer-modification-icon t)
+(setq doom-modeline-bar-width                3)
+(setq doom-modeline-minor-modes              t)
+
+
+;=======================================================
+;  Fancy Tabbed buffers
+;  ...sloooooooow...
+;=======================================================
+;;; (require 'centaur-tabs)
+;;; (centaur-tabs-mode t)
+;;; (setq centaur-tabs-set-icons t)
+;;; (global-set-key (kbd "C-c p")  'centaur-tabs-backward)
+;;; (global-set-key (kbd "C-c n")  'centaur-tabs-forward)
 
 ;=======================================================
 ;  Used to align columns of text
@@ -225,13 +248,12 @@
 ;--------------------------------------------
 ;  Color themes...
 ;--------------------------------------------
-(require 'color-theme)
-;;; (require 'color-theme-autoloads)
-(require 'solarized-dark-theme)
+;;; (require 'solarized-dark-theme)
+;;; (require 'gruvbox-theme)
+(require 'gruvbox-dark-hard-theme)
 ;;; (require 'lush-theme)
 (setq color-theme-is-global t)
-(color-theme-initialize)
-;;; (color-theme-charcoal-black) ;;; or -midnight
+;;; (color-theme-initialize)
 
 ;--------------------------------------------
 ;--  Turn on font-lock colorization
@@ -329,7 +351,7 @@
 (global-set-key (kbd "C-C k")   'kill-region)
 (global-set-key (kbd "C-C l")   'linum-mode)
 (global-set-key (kbd "C-C o")   'find-file-at-point)
-(global-set-key (kbd "C-C p")   'compare-windows)
+;;; (global-set-key (kbd "C-C p")   'compare-windows)
 (global-set-key (kbd "C-C q")   'c-fill-paragraph)
 (global-set-key (kbd "C-C r")   'revert-buffer)
 (global-set-key (kbd "C-C s")   'sort-lines)
@@ -429,7 +451,7 @@
  '(nxml-outline-child-indent 4)
  '(package-selected-packages
    (quote
-    (lush-theme lsp-java lsp-mode eshell-git-prompt 0blayout egg eshell-prompt-extras boron-theme bitbucket zpresent tide sass-mode prettier-js magit magit-filenotify magit-find-file magit-gh-pulls magit-imerge magithub treemacs nav markdown-preview-eww markdown-preview-mode markdown-toc editorconfig typescript-mode flymd markdown-mode markdown-mode+ xah-css-mode web-beautify helm-ag json-mode ack-menu full-ack ggtags groovy-mode expand-region restclient multiple-cursors auto-complete elpy vc-check-status ibuffer-vc js3-mode solarized-theme beacon psvn)))
+    (dired-icon major-mode-icons mode-icons treemacs-icons-dired fontawesome octicons dash all-the-icons-dired centaur-tabs exwm doom-themes unicode-emoticons unicode-fonts doom-modeline golden-ratio lsp-css lsp-html lsp-intellij lsp-sh lsp-typescript lsp-ui ubuntu-theme gruvbox-theme lush-theme lsp-java lsp-mode eshell-git-prompt 0blayout egg eshell-prompt-extras boron-theme bitbucket zpresent tide sass-mode prettier-js magit magit-filenotify magit-find-file magit-gh-pulls magit-imerge magithub treemacs nav markdown-preview-eww markdown-preview-mode markdown-toc editorconfig typescript-mode flymd markdown-mode markdown-mode+ xah-css-mode web-beautify helm-ag json-mode ack-menu full-ack ggtags groovy-mode expand-region restclient multiple-cursors auto-complete elpy vc-check-status ibuffer-vc js3-mode solarized-theme beacon)))
  '(ps-landscape-mode t)
  '(ps-n-up-printing 2)
  '(ps-printer-name "10.2.4.74")
@@ -580,11 +602,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-comment-face ((t (:foreground "DarkSlateGrey"))))
- '(font-lock-doc-face ((t (:foreground "darkslategrey3"))))
  '(minibuffer-noticeable-prompt ((((class color) (min-colors 88) (background light)) (:background "DarkOrchid4" :foreground "white"))))
  '(smerge-base ((t (:background "wheat"))))
  '(smerge-refined-added ((t (:inherit smerge-refined-change :background "medium spring green")))))
 
 
 (pop-to-buffer "*shell*")
+(require 'golden-ratio)
+(golden-ratio-mode)
